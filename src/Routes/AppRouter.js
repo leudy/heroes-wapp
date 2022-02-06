@@ -1,22 +1,13 @@
 import React from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-
-//my stuft
-import { DCScreen } from "../components/DCScreen";
-import { MarvelScreen } from "../components/MarvelScreen";
-import { SearchScreen } from "../components/SearchScreen";
-import { Navbar } from "../Shared/Navbar";
-
+import { DashboardRoute } from "./DashboardRoute";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Login } from "../Pages/Login";
 export const AppRouter = () => {
   return (
     <BrowserRouter>
-      <h1>Welcome to router</h1>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<MarvelScreen />} />
-        <Route path="/dc" element={<DCScreen />} />
-        <Route path="/marvel" element={<MarvelScreen />} />
-        <Route path="/search" element={<SearchScreen />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<DashboardRoute />} />
       </Routes>
     </BrowserRouter>
   );
